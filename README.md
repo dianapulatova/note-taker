@@ -1,5 +1,5 @@
-# note-taker
-Note Taker App
+# Note Taker App
+
 
 
 
