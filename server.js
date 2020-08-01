@@ -38,7 +38,7 @@ app.get("/notes", function(req, res) {
 // });
 // template literl doesnt need back ticks
 app.listen(port, () => {
-    console.log(`App listening on port ${port}`);
+    console.log(App listening on port ${port});
  });
 
 
