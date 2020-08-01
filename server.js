@@ -28,7 +28,7 @@ app.listen(PORT, () => {
     
 });
 
-// POST================================>
+
 
 app.get( `/api/notes`, (req, res) => {
     fs.readFile('develop/db/db.json','utf8',(err,data) => {
@@ -37,6 +37,7 @@ app.get( `/api/notes`, (req, res) => {
     })
 })
 
+// POST================================>
 app.post(`/api/notes`, (req, res)=> {
     const newNote = req.body;
     fs.readFile('develop/db/db.json','utf8',(err,data) => {
