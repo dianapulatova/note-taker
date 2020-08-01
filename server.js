@@ -2,7 +2,8 @@ const express = require('express');
 const path = require('path');
 const app = express();
 // const PORT = 3000;
-const PORT = process.env.PORT || 3000;
+// const PORT = process.env.PORT || 3000;
+var PORT = process.env.PORT || 3000;
 const fs = require("fs");
 const { v4: uuidv4 } = require('uuid');
 
@@ -31,10 +32,13 @@ app.get("/notes", function(req, res) {
     res.sendFile(path.join(__dirname, "Develop/public/notes.html"));
    });
 
-app.listen(PORT, () => {
-    console.log(`Example app listening at http://localhost:${PORT}`);
+// app.listen(PORT, () => {
+//     console.log(`Example app listening at http://localhost:${PORT}`);
     
-});
+// });
+app.listen(port, () => {
+    console.log(`Example app listening at http://localhost:${PORT}`);
+ });
 
 
 
