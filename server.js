@@ -13,33 +13,22 @@ app.use(express.static('Develop/public'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// routes
-//GET ======================================>
-// app.get("/", (req, res) => {
-//    res.sendFile(path.join(__dirname, 'Develop', 'public', 'index.html'));
 
-// });
 app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "Develop/public/index.html"));
    });
 
-// app.get("/notes", (req, res) => {
-//     res.sendFile(path.join(__dirname, 'Develop', 'public', 'notes.html'));
- 
-//  });
+
 
 app.get("/notes", function(req, res) {
     res.sendFile(path.join(__dirname, "Develop/public/notes.html"));
    });
 
-// app.listen(PORT, () => {
-//     console.log(`Example app listening at http://localhost:${PORT}`);
+app.listen(PORT, () => {
+    console.log(`Example app listening at http://localhost:${PORT}`);
     
-// });
-// template literl doesnt need back ticks
-app.listen(port, () => {
-    console.log(App listening on port ${port});
- });
+});
+
 
 
 
