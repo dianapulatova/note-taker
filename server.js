@@ -33,20 +33,20 @@ app.listen(PORT, () => {
 
 
 app.get( `/api/notes`, (req, res) => {
-    fs.readFile('Develop/db/db.json','utf8',(err,data) => {
+    fs.readFile('Develop/db/db.json','utf8',(err, data) => {
         const notes = JSON.parse(data);
         res.json(notes);
     })
-})
+});
 
 // POST================================>
 app.post(`/api/notes`, (req, res)=> {
     const newNote = req.body;
-    fs.readFile('develop/db/db.json','utf8',(err,data) => {
+    fs.readFile('Develop/db/db.json','utf8',(err,data) => {
         const notes = JSON.parse(data);
         newNote.id = uuidv4();
         notes.push(newNote);
-        fs.writeFile('develop/db/db.json', JSON.stringify(notes),(err) => {
+        fs.writeFile('Develop/db/db.json', JSON.stringify(notes),(err) => {
            if(err){
                console.log(err)
            }
@@ -59,10 +59,10 @@ app.post(`/api/notes`, (req, res)=> {
 // DELETE =============================>
 app.delete(`/api/notes/:id`, (req, res) => {
     const id = req.params.id;
-    fs.readFile('develop/db/db.json', 'utf8', (err, data) => {
+    fs.readFile('Develop/db/db.json', 'utf8', (err, data) => {
         let notes = JSON.parse(data);
         notes =  notes.filter(note => note.id !== id);
-        fs.writeFile('develop/db/db.json', JSON.stringify(notes),(err) =>{
+        fs.writeFile('Develop/db/db.json', JSON.stringify(notes),(err) =>{
         if(err){
             console.log(err);
         };
