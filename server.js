@@ -33,7 +33,7 @@ app.listen(PORT, () => {
 
 
 app.get( `/api/notes`, (req, res) => {
-    fs.readFile('develop/db/db.json','utf8',(err,data) => {
+    fs.readFile('Develop/db/db.json','utf8',(err,data) => {
         const notes = JSON.parse(data);
         res.json(notes);
     })
